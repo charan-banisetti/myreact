@@ -1,18 +1,28 @@
 .cart {
-  background-color: #fff;
   padding: 20px;
-  border: 1px solid #ddd;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .cart h2 {
   text-align: center;
 }
 
-.cart ul {
-  list-style-type: none;
-  padding: 0;
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-.cart ul li {
-  margin: 10px 0;
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.cart h3 {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 20px;
 }

@@ -5,6 +5,8 @@ import CartPage from './pages/CartPage';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import './App.css';
+import Footer from './Footer';
+
 
 
 function App() {
@@ -25,12 +27,15 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage addToCart={addToCart} />} />
               <Route path="/cart" element={<CartPage cartItems={cartItems} />} />
-              
             </Routes>
           </div>
         </div>
+        <div>
+          <Footer />
+        </div>
       </div>
     </Router>
+    
   );
 }
 

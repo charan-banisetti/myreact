@@ -20,7 +20,7 @@ const Header = ({ cartItems }) => {
 
   return (
     <header className="header">
-      <h1>Food Web</h1>
+      <h1>One Click to Eat</h1>
       <div className="header-actions">
         {/* Search Bar and Button */}
         <div className="search-container">

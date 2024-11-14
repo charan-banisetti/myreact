@@ -6,15 +6,12 @@ const Header = ({ cartItems }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const cartItemCount = cartItems.length;
 
-  // Handle search input change
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  // Handle search button click
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    // Here, you could handle the search logic, e.g., filtering or API call
     console.log('Searching for:', searchQuery);
   };
 
@@ -31,24 +28,26 @@ const Header = ({ cartItems }) => {
             className="search-bar"
             placeholder="Search food..."
           />
-          <button
-            className="search-button"
-            onClick={handleSearchSubmit}
-          >
+          <button className="search-button" onClick={handleSearchSubmit}>
             Search
           </button>
         </div>
 
         {/* Cart Link */}
         <nav>
-          <Link to="/cart" className={`cart-link ${cartItemCount > 0 ? 'has-items' : ''}`}>
-            {cartItemCount > 0 ? (
-              <>Cart ({cartItemCount})</>
-            ) : (
-              'Your cart is empty'
-            )}
+          <Link
+            to="/cart"
+            className={`cart-link ${cartItemCount > 0 ? 'has-items' : ''}`}
+          >
+            {cartItemCount > 0 ? `Cart (${cartItemCount})` : 'Your cart is empty'}
           </Link>
         </nav>
+
+        {/* Login & Sign Up Links */}
+        <div className="auth-links">
+          <Link to="/login" className="auth-link">Login</Link>
+          <Link to="/signup" className="auth-link signup-link">Sign Up</Link>
+        </div>
       </div>
     </header>
   );

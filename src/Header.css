@@ -143,11 +143,11 @@
 }
 
 .signup-link {
-  background-color: #4caf50; /* Green background for Sign Up */
+  background-color: #4caf50; 
 }
 
 .signup-link:hover {
-  background-color: #388e3c; /* Darker green on hover */
+  background-color: #388e3c; 
 }
 
 /* Responsiveness - Mobile */

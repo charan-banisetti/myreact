@@ -93,7 +93,7 @@
 }
 
 .cart-link:hover {
-  background-color: #ff5722; /* Highlight color */
+  background-color: #ff5722;
   transform: translateY(-3px);
 }
 

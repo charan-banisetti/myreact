@@ -97,3 +97,36 @@
   text-decoration: underline;
 }
 
+
+
+
+/* Styling for ProductCard (product detail link) */
+.product-card .view-details-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-card .view-details-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for Go Back button */
+.go-back-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.go-back-button:hover {
+  background-color: #0056b3;
+}

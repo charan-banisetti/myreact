@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../ProductCard.css';
 
 const ProductCard = ({ product, addToCart }) => {
@@ -7,8 +8,12 @@ const ProductCard = ({ product, addToCart }) => {
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{product.description}</p>
-      <p> ₹{product.price}</p>
+      <p>₹{new Intl.NumberFormat().format(product.price)}</p>
       <button onClick={() => addToCart(product)}>Add to Cart</button>
+      {/* Link to product detail page */}
+      <Link to={`/product/${product.id}`} className="view-details-button">
+        View Details
+      </Link>
     </div>
   );
 };

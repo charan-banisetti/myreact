@@ -1,25 +1,34 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import './ProductDetailPage.css';
 
-const ProductDetailPage = ({ products }) => {
+const ProductDetailPage = ({ products, addToCart }) => {
   const { id } = useParams(); // Get product ID from the URL
   const product = products.find((prod) => prod.id === parseInt(id));
 
   const navigate = useNavigate(); // Hook to navigate back to the previous page
 
   if (!product) {
-    return <div>Product not found!</div>;
+    return (
+      <div>
+        <p>Product not found!</p>
+        <button onClick={() => navigate('/')}>Back to Products</button>
+      </div>
+    );
   }
 
   return (
     <div className="product-detail-page">
-      <button onClick={() => navigate(-1)}>Go Back</button> {/* Back button */}
+      <button onClick={() => navigate(-1)} className="go-back-button">
+        Go Back
+      </button>
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>
-      <p>₹{product.price}</p>
-      <button onClick={() => addToCart(product)}>Add to Cart</button>
+      <p>₹{new Intl.NumberFormat().format(product.price)}</p>
+      <button onClick={() => addToCart(product)} className="add-to-cart-button">
+        Add to Cart
+      </button>
     </div>
   );
 };
